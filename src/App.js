@@ -1,8 +1,9 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './App.css';
 
-// Home Component
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+
+
 
 // ----------------- ADMIN PANEL -----------------
 import CompanyInformation from './Components/Panels/Admin/Company/CompanyInformation';
@@ -121,6 +122,36 @@ function App() {
           <Route path="/servicemanager/new-service-item" element={<SMNewServiceItem />} />
           <Route path="/servicemanager/service-pool" element={<SMServicePool />} />
           <Route path="/servicemanager/user-management" element={<SMUserManagement />} />
+          <Route path="/company-information" element={<CompanyInformation />} />
+          <Route path="/component" element={<Component />} />
+          <Route path="/new-customer" element={<NewCustomer />} />
+          <Route path="/customer-complaints" element={<CustomerComplaints />} />
+          <Route path="/customer-delegates" element={<CustomerDelegates />} />
+          <Route
+            path="/customer-satisfaction-survey"
+            element={<CustomerSatisfactionSurvey />}
+          />
+          <Route
+            path="/preventive-maintainance-chart"
+            element={<PreventiveMaintainanceChart />}
+          />
+          <Route
+            path="/preventive-maintainance"
+            element={<PreventiveMaintainance />}
+          />
+          <Route path="/products" element={<Products />} />
+          <Route path="/resource-management" element={<ResourceManagement />} />
+          <Route path="/service-assignment" element={<ServiceAssignment />} />
+          <Route
+            path="/service-completion-form"
+            element={<ServiceCompletionForm />}
+          />
+          <Route
+            path="/service-item-components"
+            element={<ServiceItemComponents />}
+          />
+          <Route path="/service-pool" element={<ServicePool />} />
+          <Route path="/user-management" element={<UserManagement />} />
         </Routes>
       </div>
     </Router>
