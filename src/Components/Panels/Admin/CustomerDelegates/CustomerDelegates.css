@@ -1,0 +1,27 @@
+.delegate-form-container {
+  background-color: #fff;
+  padding: 30px;
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.delegate-title {
+   font-weight: 600;
+  font-size: 1.8rem;
+  color: #111827;
+  text-align: left;
+}
+
+.delegate-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  text-align: left;
+}
+
+.delegate-form .form-label {
+  font-weight: 500;
+  text-align: left !important;
+  display: block;
+}

@@ -1,0 +1,58 @@
+.service-pool-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.service-pool-title {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #111827;
+  text-align: left;
+}
+
+.service-pool-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  text-align: left;
+}
+
+.service-pool-label {
+  font-weight: 500;
+  color: #374151;
+  text-align: left !important;
+  display: block;
+}
+
+
+.service-pool-input,
+.service-pool-select,
+.service-pool-textarea {
+  font-size: 14px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  /* background-color: #e6f0ff; Light blue background */
+}
+
+.service-pool-input:focus,
+.service-pool-select:focus,
+.service-pool-textarea:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.service-pool-textarea {
+  resize: none;
+}
+
+.service-pool-save {
+  font-weight: 500;
+  padding: 6px 18px;
+}
+
+.service-pool-cancel {
+  font-weight: 500;
+  padding: 6px 18px;
+  border: 1px solid #ccc;
+}
