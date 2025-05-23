@@ -76,8 +76,8 @@ const UserManagement = () => {
 
         {/* Buttons */}
         <div className="user-management-buttons">
-          <button type="button" className="user-management-cancel-btn">Cancel</button>
-          <button type="submit" className="user-management-save-btn">Save User</button>
+          <button type="button" className="  btn btn-outline-secondary user-management-cancel-btn">Cancel</button>
+          <button type="submit" className=" btn  btn-primary user-management-save-btn">Save User</button>
         </div>
       </form>
     </div>

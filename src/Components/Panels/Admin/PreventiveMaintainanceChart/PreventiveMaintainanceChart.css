@@ -136,7 +136,7 @@ body {
 
 .pm-title {
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 15px;
   margin-top: 25px;
   text-align: left;
@@ -144,7 +144,7 @@ body {
 
 .delegate-title {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 600;
   text-align: left;
 }
 

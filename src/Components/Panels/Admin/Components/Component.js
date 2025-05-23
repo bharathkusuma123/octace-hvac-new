@@ -52,10 +52,10 @@ const Component = () => {
           </div>
 
           <div className="d-flex justify-content-end gap-2 flex-wrap">
-            <button type="button" className="btn comp-btn-cancel">
+            <button type="button" className="btn btn-outline-secondary comp-btn-cancel">
               Cancel
             </button>
-            <button type="submit" className="btn comp-btn-save">
+            <button type="submit" className="btn  btn-primary comp-btn-save">
               Save Item Component
             </button>
           </div>

@@ -1,6 +1,6 @@
 .user-management-container {
   max-width: 1200px;
-  margin: auto;
+  margin: 40px  auto;
   padding: 1.5rem;
   background: #fff;
   border-radius: 8px;
@@ -9,7 +9,7 @@
 }
 
 .user-management-title {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   color: #2e2e2e;
 }

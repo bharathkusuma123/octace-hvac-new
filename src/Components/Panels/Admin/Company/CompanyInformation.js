@@ -79,8 +79,8 @@ const CompanyInformation = () => {
           </div>
 
           <div className="company-form-actions">
-            <button type="button" className="company-cancel-btn">Cancel</button>
-            <button type="submit" className="company-save-btn">Save Company</button>
+            <button type="button" className="  btn btn-outline-secondary company-cancel-btn">Cancel</button>
+            <button type="submit" className=" btn btn-primary company-save-btn">Save Company</button>
           </div>
         </form>
       </div>

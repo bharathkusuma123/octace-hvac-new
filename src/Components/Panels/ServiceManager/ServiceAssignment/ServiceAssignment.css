@@ -1,0 +1,48 @@
+.service-assignment-container {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.service-assignment-title {
+  font-weight: 600;
+  font-size: 28px;
+  color: #111827;
+  text-align: left;
+}
+
+.service-assignment-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  text-align: left;
+}
+
+.service-assignment-label {
+    font-weight: 500;
+  color: #374151;
+  text-align: left !important;
+  display: block;
+}
+
+.service-assignment-input {
+  font-size: 14px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  /* background-color: #e6f0ff; */
+}
+
+.service-assignment-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.service-assignment-cancel {
+  font-weight: 500;
+  padding: 6px 18px;
+}
+
+.service-assignment-submit {
+  font-weight: 500;
+  padding: 6px 18px;
+}

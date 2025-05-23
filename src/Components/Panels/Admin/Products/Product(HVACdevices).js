@@ -59,10 +59,10 @@ const ProductForm = () => {
         </div>
 
         <div className="d-flex justify-content-end gap-2 prod-button-group">
-          <button type="button" className="btn prod-btn-cancel">
+          <button type="button" className="btn btn-outline-secondary prod-btn-cancel">
             Cancel
           </button>
-          <button type="submit" className="btn prod-btn-save">
+          <button type="submit" className="btn  btn-primary prod-btn-save">
             Save Products
           </button>
         </div>

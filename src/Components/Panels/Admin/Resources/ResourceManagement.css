@@ -12,14 +12,13 @@
 
 .resource-mgmt-title2{
          margin-bottom: 5px;
-  font-size: 22px;
+  font-size: 28px;
 }
 .resource-mgmt-box {
   background: #fff;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  max-width: 1000px;
   margin: auto;
   text-align: left;
 }

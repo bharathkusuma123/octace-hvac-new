@@ -25,9 +25,8 @@ const CompanyInformation = () => {
 
   return (
     <div className="company-form-container">
-      <h2 className="company-form-title">Company</h2>
       <div className="company-form-box">
-        <h3 className="company-form-heading">Company Information</h3>
+        <h2 className="company-form-heading">Company Information</h2>
         <p className="company-form-subtitle">Fill in the company details below</p>
         <form className="company-form" onSubmit={handleSubmit}>
           <div className="company-form-row">
@@ -79,8 +78,8 @@ const CompanyInformation = () => {
           </div>
 
           <div className="company-form-actions">
-            <button type="button" className="company-cancel-btn">Cancel</button>
-            <button type="submit" className="company-save-btn">Save Company</button>
+            <button type="button" className=" btn btn-outline-secondary company-cancel-btn">Cancel</button>
+            <button type="submit" className=" btn btn-primary company-save-btn">Save Company</button>
           </div>
         </form>
       </div>

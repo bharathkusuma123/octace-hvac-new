@@ -1,157 +1,550 @@
 
+// import React from "react";
+// import { 
+//   BrowserRouter as Router, 
+//   Routes, 
+//   Route, 
+//   Navigate,
+//   Link,
+//   useNavigate
+// } from "react-router-dom";
+// import "./App.css";
+
+// // Login Components
+// import AdminLogin from "./Components/LoginPages/AdminLogin";
+
+
+// // Admin Panel Components
+// import Component from './Components/Panels/Admin/Components/Component';
+// import Products from './Components/Panels/Admin/Products/Product(HVACdevices)';
+// import ResourceManagement from './Components/Panels/Admin/Resources/ResourceManagement';
+// import UserManagement from './Components/Panels/Admin/Users/UserManagement';
+
+// // Super Admin Panel Components
+// import SACompanyInformation from './Components/Panels/SuperAdmin/Company/CompanyInformation';
+// import SACustomerComplaints from './Components/Panels/SuperAdmin/CustomerComplaints/CustomerComplaints';
+// import SACustomerSatisfactionSurvey from './Components/Panels/SuperAdmin/CustomerSatisfactionSurvey/CustomerSatisfactionSurvey';
+// import SAServiceCompletionForm from './Components/Panels/SuperAdmin/ServiceCompletionForm/ServiceCompletionForm';
+
+// // Service Manager Panel Components
+// import SMNewCustomer from './Components/Panels/ServiceManager/Customer/NewCustomer';
+// import SMCustomerDelegates from './Components/Panels/ServiceManager/CustomerDelegates/CustomerDelegates';
+// import SMPreventiveMaintainanceChart from './Components/Panels/ServiceManager/PreventiveMaintainanceChart/PreventiveMaintainanceChart';
+// import SMPreventiveMaintainance from './Components/Panels/ServiceManager/PreventiveMaintainanceGroup/PreventiveMaintainance';
+// import SMServiceAssignment from './Components/Panels/ServiceManager/ServiceAssignment/ServiceAssignment';
+// import SMServiceItemComponents from './Components/Panels/ServiceManager/ServiceItemComponents/ServiceItemComponents';
+// import SMNewServiceItem from './Components/Panels/ServiceManager/ServiceItems/NewServiceItem';
+// import SMServicePool from './Components/Panels/ServiceManager/ServicePool/ServicePool';
+
+// // Navigation Components
+// const AdminNavbar = () => {
+//   const navigate = useNavigate();
+
+//   const handleLogout = () => {
+//     localStorage.removeItem("userRole");
+//     navigate("/admin-login");
+//   };
+
+//   return (
+//     <nav className="admin-nav">
+//       <h2>Admin Panel</h2>
+//       <ul>
+//         <li><Link to="/admin/component">Components</Link></li>
+//         <li><Link to="/admin/products">Products</Link></li>
+//         <li><Link to="/admin/resource-management">Resource Management</Link></li>
+//         <li><Link to="/admin/user-management">User Management</Link></li>
+//         <li><button onClick={handleLogout} className="logout-btn">Logout</button></li>
+//       </ul>
+//     </nav>
+//   );
+// };
+
+// const SuperAdminNavbar = () => {
+//   const navigate = useNavigate();
+
+//   const handleLogout = () => {
+//     localStorage.removeItem("userRole");
+//     navigate("/superadmin-login");
+//   };
+
+//   return (
+//     <nav className="superadmin-nav">
+//       <h2>Super Admin Panel</h2>
+//       <ul>
+//         <li><Link to="/superadmin/company-information">Company Information</Link></li>
+//         <li><Link to="/superadmin/service-completion-form">Service Completion Form</Link></li>
+//         <li><Link to="/superadmin/customer-satisfaction-survey">Customer Satisfaction Survey</Link></li>
+//         <li><Link to="/superadmin/customer-complaints">Customer Complaints</Link></li>
+//         <li><button onClick={handleLogout} className="logout-btn">Logout</button></li>
+//       </ul>
+//     </nav>
+//   );
+// };
+
+// const ServiceManagerNavbar = () => {
+//   const navigate = useNavigate();
+
+//   const handleLogout = () => {
+//     localStorage.removeItem("userRole");
+//     navigate("/servicemanager-login");
+//   };
+
+//   return (
+//     <nav className="servicemanager-nav">
+//       <h2>Service Manager Panel</h2>
+//       <ul>
+//         <li><Link to="/servicemanager/new-customer"> Customer</Link></li>
+//         {/* <li><Link to="/servicemanager/customer-delegates">Customer Delegates</Link></li> */}
+//         <li><Link to="/servicemanager/preventive-maintainance-chart">P M Chart</Link></li>
+//         <li><Link to="/servicemanager/preventive-maintainance">P M Group</Link></li>
+//                 <li><Link to="/servicemanager/service-pool">Service Pool</Link></li>
+
+//         <li><Link to="/servicemanager/service-assignment">Service Assignment</Link></li>
+//         <li><Link to="/servicemanager/service-item-components">Service Item Components</Link></li>
+//         <li><Link to="/servicemanager/new-service-item"> Service Item</Link></li>
+//         <li><button onClick={handleLogout} className="logout-btn">Logout</button></li>
+//       </ul>
+//     </nav>
+//   );
+// };
+
+// // Layout Components
+// const AdminLayout = ({ children }) => {
+//   return (
+//     <div className="layout">
+//       <AdminNavbar />
+//       <div className="content">{children}</div>
+//     </div>
+//   );
+// };
+
+// const SuperAdminLayout = ({ children }) => {
+//   return (
+//     <div className="layout">
+//       <SuperAdminNavbar />
+//       <div className="content">{children}</div>
+//     </div>
+//   );
+// };
+
+// const ServiceManagerLayout = ({ children }) => {
+//   return (
+//     <div className="layout">
+//       <ServiceManagerNavbar />
+//       <div className="content">{children}</div>
+//     </div>
+//   );
+// };
+
+// // Protected Route Component
+// const ProtectedRoute = ({ role, children }) => {
+//   const userRole = localStorage.getItem("userRole");
+  
+//   if (userRole !== role) {
+//     return <Navigate to={`/${role}-login`} replace />;
+//   }
+  
+//   return children;
+// };
+
+
+
+// function App() {
+//   return (
+//     <Router>
+//       <div className="App">
+//         <Routes>
+//           <Route path="/" element={<AdminLogin />} />
+//           {/* Admin Routes */}
+//           <Route path="/admin/component" element={
+//             <ProtectedRoute role="admin">
+//               <AdminLayout>
+//                 <Component />
+//               </AdminLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/admin/products" element={
+//             <ProtectedRoute role="admin">
+//               <AdminLayout>
+//                 <Products />
+//               </AdminLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/admin/resource-management" element={
+//             <ProtectedRoute role="admin">
+//               <AdminLayout>
+//                 <ResourceManagement />
+//               </AdminLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/admin/user-management" element={
+//             <ProtectedRoute role="admin">
+//               <AdminLayout>
+//                 <UserManagement />
+//               </AdminLayout>
+//             </ProtectedRoute>
+//           } />
+
+//           {/* Super Admin Routes */}
+//           <Route path="/superadmin/company-information" element={
+//             <ProtectedRoute role="superadmin">
+//               <SuperAdminLayout>
+//                 <SACompanyInformation />
+//               </SuperAdminLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/superadmin/service-completion-form" element={
+//             <ProtectedRoute role="superadmin">
+//               <SuperAdminLayout>
+//                 <SAServiceCompletionForm />
+//               </SuperAdminLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/superadmin/customer-satisfaction-survey" element={
+//             <ProtectedRoute role="superadmin">
+//               <SuperAdminLayout>
+//                 <SACustomerSatisfactionSurvey />
+//               </SuperAdminLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/superadmin/customer-complaints" element={
+//             <ProtectedRoute role="superadmin">
+//               <SuperAdminLayout>
+//                 <SACustomerComplaints />
+//               </SuperAdminLayout>
+//             </ProtectedRoute>
+//           } />
+
+//           {/* Service Manager Routes */}
+//           <Route path="/servicemanager/new-customer" element={
+//             <ProtectedRoute role="servicemanager">
+//               <ServiceManagerLayout>
+//                 <SMNewCustomer />
+//               </ServiceManagerLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/servicemanager/customer-delegates" element={
+//             <ProtectedRoute role="servicemanager">
+//               <ServiceManagerLayout>
+//                 <SMCustomerDelegates />
+//               </ServiceManagerLayout>
+//             </ProtectedRoute>
+//           } />
+//             <Route path="/servicemanager/service-pool" element={
+//             <ProtectedRoute role="servicemanager">
+//               <ServiceManagerLayout>
+//                 <SMServicePool />
+//               </ServiceManagerLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/servicemanager/preventive-maintainance-chart" element={
+//             <ProtectedRoute role="servicemanager">
+//               <ServiceManagerLayout>
+//                 <SMPreventiveMaintainanceChart />
+//               </ServiceManagerLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/servicemanager/preventive-maintainance" element={
+//             <ProtectedRoute role="servicemanager">
+//               <ServiceManagerLayout>
+//                 <SMPreventiveMaintainance />
+//               </ServiceManagerLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/servicemanager/service-assignment" element={
+//             <ProtectedRoute role="servicemanager">
+//               <ServiceManagerLayout>
+//                 <SMServiceAssignment />
+//               </ServiceManagerLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/servicemanager/service-item-components" element={
+//             <ProtectedRoute role="servicemanager">
+//               <ServiceManagerLayout>
+//                 <SMServiceItemComponents />
+//               </ServiceManagerLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/servicemanager/new-service-item" element={
+//             <ProtectedRoute role="servicemanager">
+//               <ServiceManagerLayout>
+//                 <SMNewServiceItem />
+//               </ServiceManagerLayout>
+//             </ProtectedRoute>
+//           } />
+//           <Route path="/servicemanager/new-customer" element={
+//             <ProtectedRoute role="servicemanager">
+//               <ServiceManagerLayout>
+//                 <SMNewCustomer />
+//               </ServiceManagerLayout>
+//             </ProtectedRoute>
+//           } />
+//         </Routes>
+//       </div>
+//     </Router>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { 
+  BrowserRouter as Router, 
+  Routes, 
+  Route, 
+  Navigate,
+  Link,
+  useNavigate,
+  useLocation
+} from "react-router-dom";
 import "./App.css";
 
+// Login Components
+import AdminLogin from "./Components/LoginPages/AdminLogin";
 
-
-// ----------------- ADMIN PANEL -----------------
-import CompanyInformation from './Components/Panels/Admin/Company/CompanyInformation';
+// Admin Panel Components
 import Component from './Components/Panels/Admin/Components/Component';
-import NewCustomer from './Components/Panels/Admin/Customer/NewCustomer';
-import CustomerComplaints from './Components/Panels/Admin/CustomerComplaints/CustomerComplaints';
-import CustomerDelegates from './Components/Panels/Admin/CustomerDelegates/CustomerDelegates';
-import CustomerSatisfactionSurvey from './Components/Panels/Admin/CustomerSatisfactionSurvey/CustomerSatisfactionSurvey';
-import PreventiveMaintainanceChart from './Components/Panels/Admin/PreventiveMaintainanceChart/PreventiveMaintainanceChart';
-import PreventiveMaintainance from './Components/Panels/Admin/PreventiveMaintainanceGroup/PreventiveMaintainance';
 import Products from './Components/Panels/Admin/Products/Product(HVACdevices)';
 import ResourceManagement from './Components/Panels/Admin/Resources/ResourceManagement';
-import ServiceAssignment from './Components/Panels/Admin/ServiceAssignment/ServiceAssignment';
-import ServiceCompletionForm from './Components/Panels/Admin/ServiceCompletionForm/ServiceCompletionForm';
-import ServiceItemComponents from './Components/Panels/Admin/ServiceItemComponents/ServiceItemComponents';
-import ServiceItem from './Components/Panels/Admin/ServiceItems/ServiceItem';
-import ServicePool from './Components/Panels/Admin/ServicePool/ServicePool';
 import UserManagement from './Components/Panels/Admin/Users/UserManagement';
 
-// ----------------- SUPER ADMIN PANEL -----------------
+// Super Admin Panel Components
 import SACompanyInformation from './Components/Panels/SuperAdmin/Company/CompanyInformation';
-import SAComponent from './Components/Panels/SuperAdmin/Components/Component';
-import SANewCustomer from './Components/Panels/SuperAdmin/Customer/NewCustomer';
 import SACustomerComplaints from './Components/Panels/SuperAdmin/CustomerComplaints/CustomerComplaints';
-import SACustomerDelegates from './Components/Panels/SuperAdmin/CustomerDelegates/CustomerDelegates';
 import SACustomerSatisfactionSurvey from './Components/Panels/SuperAdmin/CustomerSatisfactionSurvey/CustomerSatisfactionSurvey';
-import SAPreventiveMaintainanceChart from './Components/Panels/SuperAdmin/PreventiveMaintainanceChart/PreventiveMaintainanceChart';
-import SAPreventiveMaintainance from './Components/Panels/SuperAdmin/PreventiveMaintainanceGroup/PreventiveMaintainance';
-import SAProducts from './Components/Panels/SuperAdmin/Products/Product(HVACdevices)';
-import SAResourceManagement from './Components/Panels/SuperAdmin/Resources/ResourceManagement';
-import SAServiceAssignment from './Components/Panels/SuperAdmin/ServiceAssignment/ServiceAssignment';
 import SAServiceCompletionForm from './Components/Panels/SuperAdmin/ServiceCompletionForm/ServiceCompletionForm';
-import SAServiceItemComponents from './Components/Panels/SuperAdmin/ServiceItemComponents/ServiceItemComponents';
-import SANewServiceItem from './Components/Panels/SuperAdmin/ServiceItems/NewServiceItem';
-import SAServicePool from './Components/Panels/SuperAdmin/ServicePool/ServicePool';
-import SAUserManagement from './Components/Panels/SuperAdmin/Users/UserManagement';
 
-// ----------------- SERVICE MANAGER PANEL -----------------
-import SMCompanyInformation from './Components/Panels/ServiceManager/Company/CompanyInformation';
-import SMComponent from './Components/Panels/ServiceManager/Components/Component';
+// Service Manager Panel Components
 import SMNewCustomer from './Components/Panels/ServiceManager/Customer/NewCustomer';
-import SMCustomerComplaints from './Components/Panels/ServiceManager/CustomerComplaints/CustomerComplaints';
 import SMCustomerDelegates from './Components/Panels/ServiceManager/CustomerDelegates/CustomerDelegates';
-import SMCustomerSatisfactionSurvey from './Components/Panels/ServiceManager/CustomerSatisfactionSurvey/CustomerSatisfactionSurvey';
 import SMPreventiveMaintainanceChart from './Components/Panels/ServiceManager/PreventiveMaintainanceChart/PreventiveMaintainanceChart';
 import SMPreventiveMaintainance from './Components/Panels/ServiceManager/PreventiveMaintainanceGroup/PreventiveMaintainance';
-import SMProducts from './Components/Panels/ServiceManager/Products/Product(HVACdevices)';
-import SMResourceManagement from './Components/Panels/ServiceManager/Resources/ResourceManagement';
 import SMServiceAssignment from './Components/Panels/ServiceManager/ServiceAssignment/ServiceAssignment';
-import SMServiceCompletionForm from './Components/Panels/ServiceManager/ServiceCompletionForm/ServiceCompletionForm';
 import SMServiceItemComponents from './Components/Panels/ServiceManager/ServiceItemComponents/ServiceItemComponents';
 import SMNewServiceItem from './Components/Panels/ServiceManager/ServiceItems/NewServiceItem';
 import SMServicePool from './Components/Panels/ServiceManager/ServicePool/ServicePool';
-import SMUserManagement from './Components/Panels/ServiceManager/Users/UserManagement';
 
-const Home = () => <h1>Welcome to the Dashboard</h1>;
+// Top Navigation Bar Component
+const TopNavbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const userRole = localStorage.getItem("userRole");
+
+  const handleLogout = () => {
+    localStorage.removeItem("userRole");
+    navigate(`/`);
+  };
+
+  const getNavItems = () => {
+    switch(userRole) {
+      case 'admin':
+        return [
+          { path: "/admin/component", label: "Components" },
+          { path: "/admin/products", label: "Products" },
+          { path: "/admin/resource-management", label: "Resources" },
+          { path: "/admin/user-management", label: "Users" }
+        ];
+      case 'superadmin':
+        return [
+          { path: "/superadmin/company-information", label: "Company Information" },
+          { path: "/superadmin/service-completion-form", label: "Service Completion Form" },
+          { path: "/superadmin/customer-satisfaction-survey", label: "Customer Satisfaction Survey" },
+          { path: "/superadmin/customer-complaints", label: "Customer Complaints" }
+        ];
+      case 'servicemanager':
+       return [
+          { path: "/servicemanager/new-customer", label: "Customer" },
+          { 
+            label: "Preventive Maintenance",
+            dropdown: [
+              { path: "/servicemanager/preventive-maintainance-chart", label: "P M Chart" },
+              { path: "/servicemanager/preventive-maintainance-group", label: "P M Group" }
+            ]
+          },
+          { path: "/servicemanager/service-pool", label: "Service Pool" },
+          { path: "/servicemanager/service-assignment", label: "Service Assignment" },
+          { path: "/servicemanager/service-item-components", label: "Service Item Components" },
+          { path: "/servicemanager/new-service-item", label: "Service Item" }
+        ];
+      default:
+        return [];
+    }
+  };
+
+  if (!userRole) return null;
+
+  return (
+    <nav className="top-navbar">
+      <div className="nav-container">
+        <div className="nav-brand">
+          {userRole === 'admin' && 'Admin Panel'}
+          {userRole === 'superadmin' && 'Super Admin Panel'}
+          {userRole === 'servicemanager' && 'Service Manager Panel'}
+        </div>
+       <div className="nav-links">
+          {getNavItems().map((item) => (
+            item.dropdown ? (
+              <div key={item.label} className="dropdown">
+                <button className="dropdown-toggle">
+                  {item.label}
+                </button>
+                <div className="dropdown-menu">
+                  {item.dropdown.map((subItem) => (
+                    <Link 
+                      key={subItem.path} 
+                      to={subItem.path}
+                      className={location.pathname === subItem.path ? 'active' : ''}
+                    >
+                      {subItem.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <Link 
+                key={item.path} 
+                to={item.path}
+                className={location.pathname === item.path ? 'active' : ''}
+              >
+                {item.label}
+              </Link>
+            )
+          ))}
+        </div>
+        <div className="nav-user">
+          <button onClick={handleLogout} className="logout-btn">Logout</button>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+// Layout Component (now simplified since navbar is at top)
+const PanelLayout = ({ children }) => {
+  return (
+    <div className="panel-layout">
+      <TopNavbar />
+      <div className="panel-content">{children}</div>
+    </div>
+  );
+};
+
+// Protected Route Component
+const ProtectedRoute = ({ role, children }) => {
+  const userRole = localStorage.getItem("userRole");
+  
+  if (userRole !== role) {
+    return <Navigate to={`/${role}-login`} replace />;
+  }
+  
+  return <PanelLayout>{children}</PanelLayout>;
+};
 
 function App() {
   return (
-    
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home />} />
-
+          <Route path="/" element={<AdminLogin />} />
+          
           {/* Admin Routes */}
-          <Route path="/admin/company-information" element={<CompanyInformation />} />
-          <Route path="/admin/component" element={<Component />} />
-          <Route path="/admin/new-customer" element={<NewCustomer />} />
-          <Route path="/admin/customer-complaints" element={<CustomerComplaints />} />
-          <Route path="/admin/customer-delegates" element={<CustomerDelegates />} />
-          <Route path="/admin/customer-satisfaction-survey" element={<CustomerSatisfactionSurvey />} />
-          <Route path="/admin/preventive-maintainance-chart" element={<PreventiveMaintainanceChart />} />
-          <Route path="/admin/preventive-maintainance" element={<PreventiveMaintainance />} />
-          <Route path="/admin/products" element={<Products />} />
-          <Route path="/admin/resource-management" element={<ResourceManagement />} />
-          <Route path="/admin/service-assignment" element={<ServiceAssignment />} />
-          <Route path="/admin/service-completion-form" element={<ServiceCompletionForm />} />
-          <Route path="/admin/service-item-components" element={<ServiceItemComponents />} />
-          <Route path="/admin/service-item" element={<ServiceItem />} />
-          <Route path="/admin/service-pool" element={<ServicePool />} />
-          <Route path="/admin/user-management" element={<UserManagement />} />
+          <Route path="/admin/component" element={
+            <ProtectedRoute role="admin">
+              <Component />
+            </ProtectedRoute>
+          } />
+          <Route path="/admin/products" element={
+            <ProtectedRoute role="admin">
+              <Products />
+            </ProtectedRoute>
+          } />
+          <Route path="/admin/resource-management" element={
+            <ProtectedRoute role="admin">
+              <ResourceManagement />
+            </ProtectedRoute>
+          } />
+          <Route path="/admin/user-management" element={
+            <ProtectedRoute role="admin">
+              <UserManagement />
+            </ProtectedRoute>
+          } />
 
           {/* Super Admin Routes */}
-          <Route path="/superadmin/company-information" element={<SACompanyInformation />} />
-          <Route path="/superadmin/component" element={<SAComponent />} />
-          <Route path="/superadmin/new-customer" element={<SANewCustomer />} />
-          <Route path="/superadmin/customer-complaints" element={<SACustomerComplaints />} />
-          <Route path="/superadmin/customer-delegates" element={<SACustomerDelegates />} />
-          <Route path="/superadmin/customer-satisfaction-survey" element={<SACustomerSatisfactionSurvey />} />
-          <Route path="/superadmin/preventive-maintainance-chart" element={<SAPreventiveMaintainanceChart />} />
-          <Route path="/superadmin/preventive-maintainance" element={<SAPreventiveMaintainance />} />
-          <Route path="/superadmin/products" element={<SAProducts />} />
-          <Route path="/superadmin/resource-management" element={<SAResourceManagement />} />
-          <Route path="/superadmin/service-assignment" element={<SAServiceAssignment />} />
-          <Route path="/superadmin/service-completion-form" element={<SAServiceCompletionForm />} />
-          <Route path="/superadmin/service-item-components" element={<SAServiceItemComponents />} />
-          <Route path="/superadmin/new-service-item" element={<SANewServiceItem />} />
-          <Route path="/superadmin/service-pool" element={<SAServicePool />} />
-          <Route path="/superadmin/user-management" element={<SAUserManagement />} />
+          <Route path="/superadmin/company-information" element={
+            <ProtectedRoute role="superadmin">
+              <SACompanyInformation />
+            </ProtectedRoute>
+          } />
+          <Route path="/superadmin/service-completion-form" element={
+            <ProtectedRoute role="superadmin">
+              <SAServiceCompletionForm />
+            </ProtectedRoute>
+          } />
+          <Route path="/superadmin/customer-satisfaction-survey" element={
+            <ProtectedRoute role="superadmin">
+              <SACustomerSatisfactionSurvey />
+            </ProtectedRoute>
+          } />
+          <Route path="/superadmin/customer-complaints" element={
+            <ProtectedRoute role="superadmin">
+              <SACustomerComplaints />
+            </ProtectedRoute>
+          } />
 
           {/* Service Manager Routes */}
-          <Route path="/servicemanager/company-information" element={<SMCompanyInformation />} />
-          <Route path="/servicemanager/component" element={<SMComponent />} />
-          <Route path="/servicemanager/new-customer" element={<SMNewCustomer />} />
-          <Route path="/servicemanager/customer-complaints" element={<SMCustomerComplaints />} />
-          <Route path="/servicemanager/customer-delegates" element={<SMCustomerDelegates />} />
-          <Route path="/servicemanager/customer-satisfaction-survey" element={<SMCustomerSatisfactionSurvey />} />
-          <Route path="/servicemanager/preventive-maintainance-chart" element={<SMPreventiveMaintainanceChart />} />
-          <Route path="/servicemanager/preventive-maintainance" element={<SMPreventiveMaintainance />} />
-          <Route path="/servicemanager/products" element={<SMProducts />} />
-          <Route path="/servicemanager/resource-management" element={<SMResourceManagement />} />
-          <Route path="/servicemanager/service-assignment" element={<SMServiceAssignment />} />
-          <Route path="/servicemanager/service-completion-form" element={<SMServiceCompletionForm />} />
-          <Route path="/servicemanager/service-item-components" element={<SMServiceItemComponents />} />
-          <Route path="/servicemanager/new-service-item" element={<SMNewServiceItem />} />
-          <Route path="/servicemanager/service-pool" element={<SMServicePool />} />
-          <Route path="/servicemanager/user-management" element={<SMUserManagement />} />
-          <Route path="/company-information" element={<CompanyInformation />} />
-          <Route path="/component" element={<Component />} />
-          <Route path="/new-customer" element={<NewCustomer />} />
-          <Route path="/customer-complaints" element={<CustomerComplaints />} />
-          <Route path="/customer-delegates" element={<CustomerDelegates />} />
-          <Route
-            path="/customer-satisfaction-survey"
-            element={<CustomerSatisfactionSurvey />}
-          />
-          <Route
-            path="/preventive-maintainance-chart"
-            element={<PreventiveMaintainanceChart />}
-          />
-          <Route
-            path="/preventive-maintainance"
-            element={<PreventiveMaintainance />}
-          />
-          <Route path="/products" element={<Products />} />
-          <Route path="/resource-management" element={<ResourceManagement />} />
-          <Route path="/service-assignment" element={<ServiceAssignment />} />
-          <Route
-            path="/service-completion-form"
-            element={<ServiceCompletionForm />}
-          />
-          <Route
-            path="/service-item-components"
-            element={<ServiceItemComponents />}
-          />
-          <Route path="/service-pool" element={<ServicePool />} />
-          <Route path="/user-management" element={<UserManagement />} />
+          <Route path="/servicemanager/new-customer" element={
+            <ProtectedRoute role="servicemanager">
+              <SMNewCustomer />
+            </ProtectedRoute>
+          } />
+          <Route path="/servicemanager/customer-delegates" element={
+            <ProtectedRoute role="servicemanager">
+              <SMCustomerDelegates />
+            </ProtectedRoute>
+          } />
+          <Route path="/servicemanager/service-pool" element={
+            <ProtectedRoute role="servicemanager">
+              <SMServicePool />
+            </ProtectedRoute>
+          } />
+          <Route path="/servicemanager/preventive-maintainance-chart" element={
+            <ProtectedRoute role="servicemanager">
+              <SMPreventiveMaintainanceChart />
+            </ProtectedRoute>
+          } />
+          <Route path="/servicemanager/preventive-maintainance-group" element={
+            <ProtectedRoute role="servicemanager">
+              <SMPreventiveMaintainance />
+            </ProtectedRoute>
+          } />
+          <Route path="/servicemanager/service-assignment" element={
+            <ProtectedRoute role="servicemanager">
+              <SMServiceAssignment />
+            </ProtectedRoute>
+          } />
+          <Route path="/servicemanager/service-item-components" element={
+            <ProtectedRoute role="servicemanager">
+              <SMServiceItemComponents />
+            </ProtectedRoute>
+          } />
+          <Route path="/servicemanager/new-service-item" element={
+            <ProtectedRoute role="servicemanager">
+              <SMNewServiceItem />
+            </ProtectedRoute>
+          } />
         </Routes>
       </div>
     </Router>

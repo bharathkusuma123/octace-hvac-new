@@ -12,14 +12,17 @@ body {
 
 /* Header styles */
 .comp-title {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 28px;
+  font-weight: 600;
   margin-bottom: 5px;
+  text-align: left;
 }
 
 .comp-subtitle {
   color: #666;
   margin-bottom: 20px;
+    text-align: left;
+
 }
 
 /* Label style */

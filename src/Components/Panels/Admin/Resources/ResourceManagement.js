@@ -27,9 +27,8 @@ const ResourceManagement = () => {
 
   return (
     <div className="resource-mgmt-container">
-      <h2 className="resource-mgmt-title">Resource Management</h2>
       <div className="resource-mgmt-box">
-              <h3 className="resource-mgmt-title2">Resource Management</h3>
+              <h2 className="resource-mgmt-title2">Resource Management</h2>
 
         <p className="resource-mgmt-subtitle">Add, view and manage your engineering resources</p>
         <form className="resource-mgmt-form" onSubmit={handleSubmit}>
@@ -132,8 +131,8 @@ const ResourceManagement = () => {
           </div>
 
           <div className="resource-mgmt-actions">
-            <button type="button" className="resource-mgmt-cancel">Cancel</button>
-            <button type="submit" className="resource-mgmt-save">Save Resources</button>
+            <button type="button" className="  btn btn-outline-secondary resource-mgmt-cancel">Cancel</button>
+            <button type="submit" className="  btn  btn-primary resource-mgmt-save">Save Resources</button>
           </div>
         </form>
       </div>
