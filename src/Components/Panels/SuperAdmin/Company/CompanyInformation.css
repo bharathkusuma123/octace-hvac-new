@@ -106,3 +106,19 @@
     align-items: stretch;
   }
 }
+
+.company-form-box, .company-table-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+
+.company-form-heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.company-form-subtitle {
+  font-size: 0.9rem;
+  color: #666;
+}

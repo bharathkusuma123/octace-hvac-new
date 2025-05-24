@@ -47,3 +47,20 @@
   font-weight: 500;
   padding: 6px 18px;
 }
+
+
+.service-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.service-subtitle {
+  font-size: 0.95rem;
+  color: #555;
+}

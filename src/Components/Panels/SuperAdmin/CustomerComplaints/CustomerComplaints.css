@@ -26,6 +26,7 @@
 .complaints-input::placeholder {
   color: #9ca3af;
   font-size: 0.95rem;
+    /* background-color: #fff; */
 }
 
 .complaints-btn-cancel {
