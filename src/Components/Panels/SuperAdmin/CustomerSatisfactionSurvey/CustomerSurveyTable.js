@@ -21,7 +21,7 @@ const CustomerSurveyTable = ({ onAdd }) => {
 
   return (
     <div className="container my-4">
-      <div className="p-4 shadow-sm rounded bg-light">
+      <div className="p-4 shadow-sm rounded ">
         <div className="d-flex justify-content-between align-items-center mb-3">
           <h2>Customer Surveys</h2>
           <button className="btn btn-primary" onClick={onAdd}>
