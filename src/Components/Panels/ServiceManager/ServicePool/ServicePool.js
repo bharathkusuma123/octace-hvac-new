@@ -141,8 +141,6 @@
 
 
 
-
-
 import React, { useState } from "react";
 import "./ServicePool.css";
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
@@ -189,6 +187,7 @@ const data = [
 
 const ServicePoolTable = () => {
   const [showModal, setShowModal] = useState(false);
+  const [currentRequest, setCurrentRequest] = useState(null);
   const [formData, setFormData] = useState({
     engineerId: "",
     completionTime: "",
@@ -202,20 +201,32 @@ const ServicePoolTable = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  const handleAssignClick = (request) => {
+    setCurrentRequest(request);
+    setShowModal(true);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted:", formData);
+    console.log("Submitted for request:", currentRequest.requestId, formData);
     setShowModal(false);
+    // Reset form
+    setFormData({
+      engineerId: "",
+      completionTime: "",
+      estimatedPrice: "",
+      startDateTime: "",
+      endDateTime: "",
+    });
   };
 
   return (
     <div className="service-container">
       <h2>Service Pool Details</h2>
 
-      {/* Add Assignment Button and Search */}
-      <div className="table-controls d-flex justify-content-between align-items-center mb-3">
-       
-        <div>
+      {/* Search and entries selector */}
+      <div className="table-controls">
+        <div className="entries-selector">
           Show{" "}
           <select>
             <option>10</option>
@@ -226,12 +237,9 @@ const ServicePoolTable = () => {
           <input
             type="text"
             placeholder="Search services..."
-            className="ms-2"
+            className="search-input"
           />
         </div>
-         <button className="btn btn-primary" onClick={() => setShowModal(true)}>
-          Add Assignment
-        </button>
       </div>
 
       {/* Table */}
@@ -246,6 +254,7 @@ const ServicePoolTable = () => {
               <th>SERVICE ITEM ID</th>
               <th>PREFERRED DATE || TIME</th>
               <th>ACTIONS</th>
+              <th>ASSIGN</th>
             </tr>
           </thead>
           <tbody>
@@ -263,6 +272,14 @@ const ServicePoolTable = () => {
                   <FaEye className="icon view" />
                   <FaEdit className="icon edit" />
                   <FaTrash className="icon delete" />
+                </td>
+                <td>
+                  <button 
+                    className="assign-btn"
+                    onClick={() => handleAssignClick(d)}
+                  >
+                    Assign
+                  </button>
                 </td>
               </tr>
             ))}
@@ -283,77 +300,81 @@ const ServicePoolTable = () => {
       {/* Modal */}
       {showModal && (
         <div className="modal-overlay">
-          <div className="modal-content service-assignment-container container">
-            <h3 className="service-assignment-title">Service Assignment</h3>
-            <p className="service-assignment-subtitle">
-              Fill in the service assignment details below
-            </p>
-            <form onSubmit={handleSubmit} className="service-assignment-form mt-3">
-              <div className="row mb-3">
-                <div className="col-md-4">
-                  <label className="form-label">Assigned Engineer ID</label>
+          <div className="modal-content">
+            <div className="modal-header">
+              <h3>Service Assignment for {currentRequest?.requestId}</h3>
+              <p>Fill in the service assignment details below</p>
+            </div>
+            
+            <form onSubmit={handleSubmit} className="assignment-form">
+              <div className="form-grid">
+                <div className="form-group">
+                  <label>Assigned Engineer ID</label>
                   <input
                     type="text"
                     name="engineerId"
                     value={formData.engineerId}
                     onChange={handleChange}
-                    className="form-control"
                     placeholder="001"
+                    required
                   />
                 </div>
-                <div className="col-md-4">
-                  <label className="form-label">Estimated Completion Time</label>
+                
+                <div className="form-group">
+                  <label>Estimated Completion Time</label>
                   <input
                     type="time"
                     name="completionTime"
                     value={formData.completionTime}
                     onChange={handleChange}
-                    className="form-control"
+                    required
                   />
                 </div>
-                <div className="col-md-4">
-                  <label className="form-label">Estimated Price</label>
+                
+                <div className="form-group">
+                  <label>Estimated Price</label>
                   <input
                     type="number"
                     name="estimatedPrice"
                     value={formData.estimatedPrice}
                     onChange={handleChange}
-                    className="form-control"
                     placeholder="21.20"
+                    required
                   />
                 </div>
-              </div>
-              <div className="row mb-4">
-                <div className="col-md-4">
-                  <label className="form-label">Estimated Start Date & Time</label>
+                
+                <div className="form-group">
+                  <label>Estimated Start Date & Time</label>
                   <input
                     type="datetime-local"
                     name="startDateTime"
                     value={formData.startDateTime}
                     onChange={handleChange}
-                    className="form-control"
+                    required
                   />
                 </div>
-                <div className="col-md-4">
-                  <label className="form-label">Estimated End Date & Time</label>
+                
+                <div className="form-group">
+                  <label>Estimated End Date & Time</label>
                   <input
                     type="datetime-local"
                     name="endDateTime"
                     value={formData.endDateTime}
                     onChange={handleChange}
-                    className="form-control"
+                    required
                   />
                 </div>
               </div>
-              <div className="d-flex justify-content-end">
+              
+              <div className="form-actions">
                 <button
                   type="button"
-                  className="btn btn-outline-secondary me-2"
+                  className="cancel-btn"
                   onClick={() => setShowModal(false)}
                 >
                   Cancel
                 </button>
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="submit-btn">
                   Save Assignment
                 </button>
               </div>
