@@ -105,3 +105,49 @@
     flex: 1 1 100%;
   }
 }
+
+
+
+
+/* Add these to your existing CSS */
+.table-responsive {
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.table {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.table th {
+  background-color: #343a40;
+  color: white;
+  font-weight: 500;
+  vertical-align: middle;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
